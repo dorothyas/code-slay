@@ -25,7 +25,7 @@ $ git clone
 
 ## Running
 ``` 
-$ python run.py
+$ python users.py
 ```
 ## Authors
 * Patrick Fitz Okou
