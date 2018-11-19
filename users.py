@@ -82,7 +82,7 @@ class Comments:
 
     def edit_comment(self, message, comment_id):
         if comment_id<=len(Comments.comments) and comment_id>0:
-            if Users.users[Users.loggedInUsers[0]]["username"] == Comments.comments[comment_id-1]['author']:
+            if Users.users[Users.loggedInUsers[0]-1]["username"] == Comments.comments[comment_id-1]['author']:
                 Comments.comments[comment_id-1]['message']= message
 
 
@@ -91,3 +91,12 @@ user.create_user()
 
 print(Users.users)
 user.login('Boli','12345678')
+comment = Comments('What is github?')
+comment.make_comment()
+print(Comments.comments)
+comment.edit_comment('Me no understand this', 1)
+print(Comments.comments)
+
+
+
+
