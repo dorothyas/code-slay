@@ -34,6 +34,7 @@ class Users:
                 current_user["lastLoggedInAt"] = datetime.datetime.utcnow()
                 Users.loggedInUsers.append(current_user["user_id"])
                 print("Logged in successfully")
+                return "Logged in successfully"
 
     @staticmethod
     def logout():
@@ -66,7 +67,9 @@ class Comments:
             "comment_id": comment_id
         }
         Comments.comments.append(new_comment)
+        return "comment successfully added"
     
+
     def delete_comment(self, comment_id):
         user_id = Users.loggedInUsers[0]
         for current_user in Users.users:
@@ -75,15 +78,17 @@ class Comments:
 
         # for comment in Comments.comments:
         #     if comment["comment_id"] == comment_id
-        if comment_id<=len(Comments.comments) and comment_id>0:
-            Comments.comments.pop(comment_id-1)
-        else: 
-            print('Comment does not exist')
+                if comment_id<=len(Comments.comments) and comment_id>0:
+                    Comments.comments.pop(comment_id-1)
+                    return "comment deleted successfully"
+                else: 
+                    print('Comment does not exist')
 
     def edit_comment(self, message, comment_id):
         if comment_id<=len(Comments.comments) and comment_id>0:
             if Users.users[Users.loggedInUsers[0]-1]["username"] == Comments.comments[comment_id-1]['author']:
                 Comments.comments[comment_id-1]['message']= message
+                return "comment edited successfully"
 
 
 user = Users('Boli', '12345678', 'user')
@@ -96,7 +101,17 @@ comment.make_comment()
 print(Comments.comments)
 comment.edit_comment('Me no understand this', 1)
 print(Comments.comments)
+comment = Comments('What is notjkk github?')
+comment.make_comment()
+print('\nNew list after user creates new comment\n',Comments.comments)
 
+comment.delete_comment(2)
+print('\nNew list after user tries to delete\n',Comments.comments)
+user.logout()
 
-
+admin_user = Users('Mike', 'admin', 'admin')
+admin_user.create_user()
+admin_user.login('Mike', 'admin')
+comment.delete_comment(2)
+print('\nNew list after admin deletes\n',Comments.comments)
 
