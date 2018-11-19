@@ -10,3 +10,23 @@ Users come in 3 roles: normal users, moderators, and admins
 * Moderators and Admins cannot delete any comments
 * Admins can edit comments
 
+## Prerequisites
+- GIT
+
+• to update and clone the repository
+``` 
+$ git clone
+```
+- IDE e.g Visual Studio Code
+- Python 3
+
+## Built with
+- Python 3
+
+## Authors
+* Patrick Fitz Okou
+* Nyabongo Timothy
+* Dorothy Asiimwe
+* Timbiti Roghashin
+* Wasibani Zadok Roy
+
