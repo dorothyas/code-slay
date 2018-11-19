@@ -15,7 +15,7 @@ Users come in 3 roles: normal users, moderators, and admins
 
 • to update and clone the repository
 ``` 
-$ git clone
+$ git clone https://github.com/dorothyas/code-slay.git
 ```
 - IDE e.g Visual Studio Code
 - Python 3
